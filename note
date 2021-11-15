@@ -1,7 +1,7 @@
 casper-client put-deploy \
 --chain-name casper-test \
 --node-address http://3.208.91.63:7777 \
---payment-amount 67000000000 \
+--payment-amount 70000000000 \
 --session-path /home/jh/rust/transfer/contract/target/wasm32-unknown-unknown/release/contract.wasm \
 --session-arg "target:public_key='010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3'" \
 --secret-key /home/jh/keys/jdk1/secret_key.pem 

@@ -49,6 +49,7 @@ pub extern "C" fn call() {
 
     let (stored_contract_hash, _) =
         storage::new_locked_contract(counter_entry_points, Some(counter_named_keys), None, None);
+    runtime::put_key("transferamount", stored_contract_hash.into());
 
     //get target public key
     let target: PublicKey = runtime::get_named_arg(ARG_TARGET);
