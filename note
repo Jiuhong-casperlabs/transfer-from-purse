@@ -1,10 +1,24 @@
 casper-client put-deploy \
 --chain-name casper-test \
 --node-address http://3.208.91.63:7777 \
---payment-amount 70000000000 \
+--payment-amount 20000000000 \
 --session-path /home/jh/rust/transfer/contract/target/wasm32-unknown-unknown/release/contract.wasm \
---session-arg "target:public_key='010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3'" \
---secret-key /home/jh/keys/jdk1/secret_key.pem 
+--secret-key /home/jh/keys/jdk2/secret_key.pem 
+
+casper-client put-deploy --chain-name casper-test \
+--node-address http://3.208.91.63:7777 \
+--secret-key /home/jh/keys/jdk1/secret_key.pem \
+--session-hash "hash-fAd7F05408a55853dF2f1312A17B0db5208A7C0D13742294aF0aD38d82D18001" \
+--session-entry-point "call_entrypoint"  \
+--payment-amount 10000000000
+
+casper-client put-deploy --chain-name casper-test \
+--node-address http://3.208.91.63:7777 \
+--secret-key /home/jh/keys/jdk2/secret_key.pem \
+--session-hash "hash-fAd7F05408a55853dF2f1312A17B0db5208A7C0D13742294aF0aD38d82D18001" \
+--session-entry-point "transfer_amount1"  \
+--payment-amount 10000000000
+
 
 <!-- --session-arg "target:public_key='010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3'" \ -->
 
