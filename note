@@ -1,23 +1,45 @@
 casper-client put-deploy \
 --chain-name casper-test \
---node-address http://3.208.91.63:7777 \
+--node-address http://94.130.10.55:7777 \
 --payment-amount 20000000000 \
---session-path /home/jh/rust/transfer/contract/target/wasm32-unknown-unknown/release/contract.wasm \
---secret-key /home/jh/keys/jdk2/secret_key.pem 
+--session-path /home/jh/mywork/transfer-from-purse/contract/target/wasm32-unknown-unknown/release/contract.wasm \
+--session-arg "amount:U512='9000000000'" \
+--secret-key /home/jh/keys/test1/secret_key.pem 
+
+casper-client get-deploy --node-address http://94.130.10.55:7777 47ca45aff630329ce330fab79239c0d7b89dd13473298657e1cd519f4ff0c710
+
+
+casper-client put-deploy \
+--chain-name casper-test \
+--node-address http://94.130.10.55:7777 \
+--payment-amount 6000000000 \
+--session-path /home/jh/mywork/transfer-from-purse/contract/target/wasm32-unknown-unknown/release/contract1.wasm \
+--session-arg "amount:U512='1000000000'" \
+--secret-key /home/jh/keys/test1/secret_key.pem 
+
+casper-client get-deploy --node-address http://94.130.10.55:7777 3b761d95b23e4627c8a7398b833c05431c0869fda31b5c3ba7187f95520cde66
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 casper-client put-deploy --chain-name casper-test \
---node-address http://3.208.91.63:7777 \
---secret-key /home/jh/keys/jdk1/secret_key.pem \
---session-hash "hash-fAd7F05408a55853dF2f1312A17B0db5208A7C0D13742294aF0aD38d82D18001" \
---session-entry-point "call_entrypoint"  \
---payment-amount 10000000000
-
-casper-client put-deploy --chain-name casper-test \
---node-address http://3.208.91.63:7777 \
---secret-key /home/jh/keys/jdk2/secret_key.pem \
---session-hash "hash-fAd7F05408a55853dF2f1312A17B0db5208A7C0D13742294aF0aD38d82D18001" \
+--node-address http://94.130.10.55:7777 \
+--secret-key /home/jh/keys/test1/secret_key.pem \
+--session-hash "hash-290bcecf351b6ced61c956a325ad3b1385c8f3c69cb97fd0f258f56a9f04ac14" \
 --session-entry-point "transfer_amount1"  \
---payment-amount 10000000000
+--payment-amount 3000000000
+
+casper-client get-deploy --node-address http://94.130.10.55:7777 4bf4308d4deba316d04f26a6221024b02cb999537a1ac60a9bdb9cc2e84981ef
 
 
 <!-- --session-arg "target:public_key='010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3'" \ -->
