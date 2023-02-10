@@ -14,7 +14,7 @@ use casper_types::{
 };
 
 #[no_mangle]
-pub fn transfer_amount1() {
+pub fn transfer_amount() {
     let source_purse = runtime::get_key("secondpurse")
         .unwrap()
         .into_uref()
@@ -48,7 +48,7 @@ pub extern "C" fn call() {
     // Create entry point
     let mut counter_entry_points = EntryPoints::new();
     counter_entry_points.add_entry_point(EntryPoint::new(
-        "transfer_amount1",
+        "transfer_amount",
         vec![],
         CLType::Unit,
         EntryPointAccess::Public,
