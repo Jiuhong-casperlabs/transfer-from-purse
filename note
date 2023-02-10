@@ -1,48 +1,21 @@
+<!-- install contract -->
 casper-client put-deploy \
 --chain-name casper-test \
 --node-address http://94.130.10.55:7777 \
 --payment-amount 20000000000 \
 --session-path /home/jh/mywork/transfer-from-purse/contract/target/wasm32-unknown-unknown/release/contract.wasm \
 --session-arg "amount:U512='9000000000'" \
---secret-key /home/jh/keys/test1/secret_key.pem 
+--secret-key /home/jh/keys/test2/secret_key.pem 
 
-casper-client get-deploy --node-address http://94.130.10.55:7777 47ca45aff630329ce330fab79239c0d7b89dd13473298657e1cd519f4ff0c710
+casper-client get-deploy --node-address http://94.130.10.55:7777 f3db0a48c34726c40dbd184d71a4652f36695fae896534ef7c9c4d4fdc1449e4
 
-
-casper-client put-deploy \
---chain-name casper-test \
---node-address http://94.130.10.55:7777 \
---payment-amount 6000000000 \
---session-path /home/jh/mywork/transfer-from-purse/contract/target/wasm32-unknown-unknown/release/contract1.wasm \
---session-arg "amount:U512='1000000000'" \
---secret-key /home/jh/keys/test1/secret_key.pem 
-
-casper-client get-deploy --node-address http://94.130.10.55:7777 3b761d95b23e4627c8a7398b833c05431c0869fda31b5c3ba7187f95520cde66
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- call entrypoint transfer_amount -->
 casper-client put-deploy --chain-name casper-test \
 --node-address http://94.130.10.55:7777 \
---secret-key /home/jh/keys/test1/secret_key.pem \
---session-hash "hash-290bcecf351b6ced61c956a325ad3b1385c8f3c69cb97fd0f258f56a9f04ac14" \
---session-entry-point "transfer_amount1"  \
+--secret-key /home/jh/keys/test2/secret_key.pem \
+--session-hash "hash-01efcdd4aada8f161802c6f603544966d36c7c72c636da323346eb5e397c544c" \
+--session-entry-point "transfer_amount"  \
+--session-arg "account_hash:key='account-hash-d9758b25962f4cba82ba0047389af97a70acb7df43b391f9ffb293801bea5061'" \
 --payment-amount 3000000000
 
-casper-client get-deploy --node-address http://94.130.10.55:7777 4bf4308d4deba316d04f26a6221024b02cb999537a1ac60a9bdb9cc2e84981ef
-
-
-<!-- --session-arg "target:public_key='010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3'" \ -->
-
-<!-- --session-arg "pk:public_key='0125a6336791eba195c472a8b7dbcd256a6ecddf8863e586a3dfefe2581a5d672c'" \ -->
-
+casper-client get-deploy --node-address http://94.130.10.55:7777 61380a72a8849921b64de76575471128097eef5451912514da4b60009892012c

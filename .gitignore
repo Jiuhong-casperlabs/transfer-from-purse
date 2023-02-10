@@ -2,3 +2,4 @@ target
 tests
 contract/src/main_*
 contract/src/transfer*
+result*
