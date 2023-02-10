@@ -49,8 +49,10 @@ casper-client put-deploy \
 casper-client put-deploy --chain-name casper-test \
 --node-address http://94.130.10.55:7777 \
 --secret-key /home/jh/keys/test2/secret_key.pem \
---session-hash "hash-01efcdd4aada8f161802c6f603544966d36c7c72c636da323346eb5e397c544c" \
+--session-hash "hash-4f3de8e812f8bfee3e088461b325b5136d69307fc62aafa034298e16b818e332" \
 --session-entry-point "transfer_amount"  \
 --session-arg "account_hash:key='account-hash-d9758b25962f4cba82ba0047389af97a70acb7df43b391f9ffb293801bea5061'" \
 --payment-amount 3000000000
 ```
+
+<!-- pk:010e31a03ea026a8e375653573e0120c8cb96699e6c9721ae1ea98f896e6576ac3 -->
